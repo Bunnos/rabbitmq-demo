@@ -1,5 +1,6 @@
 package com.antiumbo.rabbitmqdemo.test;
 
+import com.antiumbo.rabbitmqdemo.config.RabbitConfig;
 import org.springframework.amqp.rabbit.annotation.RabbitHandler;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.stereotype.Component;
@@ -9,7 +10,7 @@ import org.springframework.stereotype.Component;
  * @date on 2018/5/29
  **/
 @Component
-@RabbitListener(queues = "hello")
+@RabbitListener(queues = RabbitConfig.queueName)
 public class HelloReceiver {
 
     @RabbitHandler
